@@ -25,6 +25,7 @@ export default {
   component: Button,
 };
 
-export const Primary = () => <Button primary>Button</Button>; ```
+export const Primary = () => <Button primary>Button</Button>; 
+```
 
 ![button](https://storybook.js.org/d1406df7f9ce817ae0e5b3eb5f1bf1f3/example-button-noargs.png)
