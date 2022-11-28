@@ -41,10 +41,10 @@ import React from 'react';
 import { Button } from './Button';
 
 export default {
-  */* 👇 The title prop is optional.*
-  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading*
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
   * to learn how to generate automatic titles
-  */*
+  */
   title: 'Button',
   component: Button,
 };
@@ -59,3 +59,8 @@ Primary.args = {
    label: 'Button',
 };
 ```
+![modified](https://storybook.js.org/ff519d6518900d4be0ce86bbf3655913/example-button-args.png)
+Both story examples render the same thing because Storybook feeds the given args property into the story during render. But you get timesaving conveniences with args:
+
+* Buttons callbacks are logged into the Actions tab. Click to try it.
+* Buttons arguments are dynamically editable in the Controls tab. Adjust the controls
