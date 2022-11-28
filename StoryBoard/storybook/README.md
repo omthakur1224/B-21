@@ -1,7 +1,7 @@
 
 # Storybook ?
-A story is a function that describes how to render the component in question.
-A story captures the rendered state of a UI component. Developers write multiple stories per component that describe all the “interesting” states a component can support.
+Storybook is a tool for UI development. It makes development faster and easier by isolating components. This allows you to work on one component at a time. You can develop entire UIs without needing to start up a complex dev stack, force certain data into your database, or navigate around your application.
+
 
 ## How to install StoryBook?
 #### Add Storybook:
@@ -28,7 +28,9 @@ There are some noteworthy items here:
 * The CLI created example components that demonstrate the types of components you can build with Storybook: Button, Header, and Page.
 
 # What's a story?
-Each example component has a set of stories that show the states it supports. You can browse the stories in the UI and see the code behind them in files that end with `.stories.js` or `.stories.ts`. The stories are written in Component Story Format (CSF)--an ES6 modules-based standard--for writing component examples.
+A story is a function that describes how to render the component in question.
+A story captures the rendered state of a UI component. Developers write multiple stories per component that describe all the “interesting” states a component can support.
+Each example component has a set of stories that show the states it supports. You can browse the stories in the UI and see the code behind them in files that end with ```.stories.js``` or ```.stories.ts```. The stories are written in Component Story Format (CSF)--an ES6 modules-based standard--for writing component examples.
 
 Let’s start with the Button component. A story is a function that describes how to render the component in question. Here’s how to render Button in the “primary” state and export a story called Primary.
 
@@ -87,6 +89,12 @@ Both story examples render the same thing because Storybook feeds the given args
 
 * Buttons callbacks are logged into the Actions tab. Click to try it.
 * Buttons arguments are dynamically editable in the Controls tab. Adjust the controls
+
+## Edit a story
+
+Storybook makes it easy to work on one component in one state (AKA a story) at a time. When you edit the Button code or stories, Storybook will instantly re-render in the browser. No need to refresh manually.
+
+Update the label of the Primary story, then see your change in Storybook.
 <!-- 
 ![Link] (https://storybook.js.org/db8564b68cb4c974dc1f7b8834cfb4ee/example-button-hot-module-reload-optimized.mp4) -->
 
