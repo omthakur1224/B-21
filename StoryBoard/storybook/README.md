@@ -65,4 +65,7 @@ Both story examples render the same thing because Storybook feeds the given args
 * Buttons callbacks are logged into the Actions tab. Click to try it.
 * Buttons arguments are dynamically editable in the Controls tab. Adjust the controls
 
-![Link] (https://storybook.js.org/db8564b68cb4c974dc1f7b8834cfb4ee/example-button-hot-module-reload-optimized.mp4)
+![Link](https://storybook.js.org/db8564b68cb4c974dc1f7b8834cfb4ee/example-button-hot-module-reload-optimized.mp4)
+
+<video src="https://storybook.js.org/db8564b68cb4c974dc1f7b8834cfb4ee/example-button-hot-module-reload-optimized.mp4" controls="controls" style="max-width: 730px;">
+</video
