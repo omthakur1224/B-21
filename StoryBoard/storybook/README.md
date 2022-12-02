@@ -1,23 +1,34 @@
 
 # Storybook ?
-Storybook is a tool for UI development. It makes development faster and easier by isolating components. This allows you to work on one component at a time. You can develop entire UIs without needing to start up a complex dev stack, force certain data into your database, or navigate around your application.
+Storybook is a development environment tool that is used as a playground for UI components. It allows us, to create and test components in isolation(seprately). It runs outside the app, so that project dependencies won't affect the behaviour of components.
 
-
+#Why storybook?
+As we a
 ## How to install StoryBook?
 #### Add Storybook:
-* ```npm install storybook```
-* ```npx storybook init```
+1.  ```npm install storybook```
+2.  ```npx storybook init```
+
 Storybook will look into your project's dependencies during its install process and provide you with the best configuration available.
 
-The command above will make the following changes to your local environment:
+```storybook init is not made for empty projects```
+Storybook needs to be installed into a project that is already set up with a framework. It will not work on an empty project. 
+<!-- There are many ways to bootstrap an app in a given framework, including: -->
+<!-- 📦 Create an Angular Workspace -->
+📦 Create React App
+<!-- 📦 Create a Vue App -->
+<!-- 📦 Ember CLI -->
+<!-- Or any other tooling available. -->
+
+<!-- The command above will make the following changes to your local environment:
 * 📦 Install the required dependencies.
 * 🛠 Setup the necessary scripts to run and build Storybook.
 * 🛠 Add the default Storybook configuration.
 * 📝 Add some boilerplate stories to get you started.
-* 📡 Set up telemetry to help us improve Storybook
+* 📡 Set up telemetry to help us improve Storybook -->
 Depending on your framework, first, build your app and then check that everything worked by running:
 
- ```npm run storyboard```
+ ```npm run storybook```
 it will automatically open the address in a new browser tab, and you'll be greeted by a welcome screen.
 ![storybook](https://storybook.js.org/0c574a42143da65f91a53764c711a10e/example-welcome.png)
 
@@ -54,7 +65,6 @@ export const Primary = () => <Button primary>Button</Button>;
 ```
 
 ![button](https://storybook.js.org/d1406df7f9ce817ae0e5b3eb5f1bf1f3/example-button-noargs.png)
-
 
 The above story definition can be further improved to take advantage of Storybook’s “args” concept. Args describes the arguments to Button in a machine-readable way. It unlocks Storybook’s superpower of altering and composing arguments dynamically.
 

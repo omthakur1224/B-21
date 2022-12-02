@@ -1,4 +1,7 @@
-import {createLegacyStore} from 'redux'
+// import {createLegacyStore} from 'redux'
+import { legacy_createStore } from 'redux';
 import { calciReducer } from './reducer'
 
-export const store= createLegacyStore(calciReducer);
+ const store= legacy_createStore(calciReducer);
+ 
+export default store

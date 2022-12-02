@@ -1,5 +1,32 @@
 import { ADD, DIV, MUL, SUB } from "./actionTypes";
-export const add=(payload)=>({type:ADD, payload:payload})
-export const subtract=(value)=>({type:SUB,payload:value});
-export const multiply=(value)=>({type:MUL,payload:value})
-export const divide=(value)=>({type:DIV,payload:value})
+
+export const add=(data)=>{
+               let x=data;
+                x=x.split("+");
+                x=Number(Number(x[0])+Number(x[1]));
+                console.log(x)
+                return {type:ADD, payload:x}
+}
+
+export const subtract=(data)=>{
+    let x=data;
+     x=x.split("-");
+     x=Number(Number(x[0])-Number(x[1]));
+     console.log(x)
+     return {type:SUB, payload:x}
+}
+export const multiply=(data)=>{
+    console.log(data,'mul')
+    let x=data;
+     x=x.split("*");
+     x=(Number(x[0])*Number(x[1]));
+     console.log(x)
+     return {type:MUL, payload:x}
+}
+export const divide=(data)=>{
+    let x=data;
+     x=x.split("/");
+     x=Number(Number(x[0])/Number(x[1]));
+     console.log(x)
+     return {type:DIV, payload:x}
+}
