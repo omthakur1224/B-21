@@ -15,7 +15,7 @@ import Link from 'next/link'
        <h1>hello home</h1>
        {movies.map((movie)=>(
        <div key={movie.id}>
-          <Link href={`/$id`}>{movie.Title}</Link>
+          <Link href={`/${movie.id}`}>{movie.Title}</Link>
           {/* {movie.Title} */}
        </div>
        ))}

@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GetStaticProps
+<p>Now that we’ve discussed the differences and functionalities of client-side and server-side rendering, let’s proceed with diving deep into our data fetching functions. We’ll start with GetStaticProps. [15:06] of the video covers the explanation regarding this function.</p>
 
-## Getting Started
+The salient points are listed below -
 
-First, run the development server:
+1. This method is primarily used inside a page to fetch data at build time.
+2. Once the app is built, it will refuse to refresh the data till the time another build has been run.
+3. The advantage of using GetStaticProps is that it lets the page be statically generated. As a result, out of all the available data fetching methods, GetStaticProps generates the fastest load times.
+4. As the data is rendered before it reaches the client, the SEO of the page improves by leaps and bounds.
 
-```bash
-npm run dev
-# or
-yarn dev
+# GetServerSideProps
+To understand GetServerSideProps in detail, refer to [24:08] of the video.
+
+The salient points are listed below -
+
+1. This method is primarily used to fetch data for every instance that a user issues a request to the page.
+2. It fetches the data first before sending the page to the client. Should the client happen to issue a subsequent request, the data is fetched again.
+3. Using GetServerSideProps allows you to improve your SEO as in this method the data is rendered before it reaches the client.
+4. As the data is refreshed every time the user loads the page, they can view the updated information at all times.
+
+# getStaticPaths
+If a page has Dynamic Routes and uses getStaticProps, it needs to define a list of paths to be statically generated.
+
+When you export a function called getStaticPaths (Static Site Generation) from a page that uses dynamic routes, Next.js will statically pre-render all the paths specified by getStaticPaths.
+
+// pages/posts/[id].js
+
+// Generates `/posts/1` and `/posts/2`
+
+``` 
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    fallback: false, // can also be true or 'blocking'
+  }
+}
+
+// `getStaticPaths` requires using `getStaticProps`
+export async function getStaticProps(context) {
+  return {
+    // Passed to the page component as props
+    props: { post: {} },
+  }
+}
+
+export default function Post({ post }) {
+  // Render post...
+}
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The getStaticPaths API reference covers all parameters and props that can be used with getStaticPaths.

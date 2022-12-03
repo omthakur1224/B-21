@@ -20,6 +20,7 @@ const Movie = ({movie}) => {
     </div>
   )
 }
+
 export async function getStaticPaths(){
     // console.log(context)
     const response=await fetch("http://localhost:8080/movies")
