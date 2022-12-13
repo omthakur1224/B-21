@@ -13,7 +13,7 @@ function App() {
     setCount(incrementValue(count));
   };
   const handleDecrement = () => {
-    for (let i = 0; i < 500000000; i++) {
+    for (let i = 0; i < 5000; i++) {
       random += 1;
     }
     setCount(decrementValue(count));

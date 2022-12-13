@@ -1,4 +1,4 @@
-import { EndOfLineState } from "./node_modules/typescript/lib/typescript";
+import { EndOfLineState } from "../node_modules/typescript/lib/typescript";
 
 //class is used where many things are common in many products;
 class cars{
